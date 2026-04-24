@@ -1,245 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Smash</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --red: #ff2d55; --pink: #ff5e9e;
-      --dark: #0d0d12; --gray: #f5f5f7;
-      --text: #1d1d1f; --muted: #6e6e73; --border: #d2d2d7;
-    }
-    body { background: #fff; color: var(--text); font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terms of Service — Smash</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0a0a0a;--white:#ffffff;--off:#f5f5f5;--red:#f03558;--gray:#6b6b6b;--border:#e0e0e0}
+body{background:var(--white);color:var(--black);font-family:'Inter',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; padding: 0 48px; height: 64px; }
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #ff6b35, #ff2d55, #c0175a); display: flex; align-items: center; justify-content: center; }
-    .nav-wordmark { font-size: 18px; font-weight: 900; letter-spacing: 1.5px; color: var(--text); }
-    .nav-wordmark .a { color: var(--red); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--red); font-weight: 600; }
+nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:64px}
+.n-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.n-wm{font-size:16px;font-weight:900;letter-spacing:.18em;color:var(--black);text-transform:uppercase}
+.n-links{display:flex;gap:40px;align-items:center}
+.n-link{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .15s}
+.n-link:hover{color:var(--black)}
+.n-link.active{color:var(--black);border-bottom:2px solid var(--black);padding-bottom:1px}
 
-    .page-hero { background: var(--gray); border-bottom: 1px solid var(--border); padding: 64px 48px 52px; }
-    .page-hero-inner { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
-    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-    .page-title { font-size: clamp(32px, 4vw, 48px); font-weight: 900; letter-spacing: -0.025em; margin-bottom: 12px; line-height: 1.1; }
-    .page-sub { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 480px; }
-    .effective-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #fff; border: 1px solid var(--border); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.ph{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);min-height:280px}
+.ph-l{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.ph-label{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gray);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.ph-label::before{content:'';width:28px;height:1px;background:var(--gray)}
+.ph-title{font-size:clamp(44px,5.5vw,72px);font-weight:900;letter-spacing:-.04em;line-height:.96;color:var(--black);margin-bottom:20px}
+.ph-sub{font-size:15px;color:var(--gray);line-height:1.78;font-weight:300;max-width:360px}
+.ph-eff{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:7px 14px;border:1.5px solid var(--border);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.ph-r{background:var(--off);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ph-r::before{content:'§';position:absolute;font-size:360px;font-weight:900;color:rgba(0,0,0,.04);font-family:'Inter',sans-serif;line-height:1;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
 
-    .content { max-width: 760px; margin: 0 auto; padding: 56px 48px 100px; }
+.warn{background:var(--off);border-bottom:1px solid var(--border);padding:14px 60px;display:flex;align-items:center;gap:14px}
+.warn-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+.warn-t{font-size:12px;font-weight:600;color:var(--black)}
 
-    .policy-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
-    .policy-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-    .section-num-badge { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--red), var(--pink)); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .section-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
-    p.body-text { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
-    p.body-text a { color: var(--red); text-decoration: none; font-weight: 500; }
-    p.body-text strong { color: var(--text); font-weight: 600; }
-    p.body-text:last-child { margin-bottom: 0; }
+.content{max-width:900px;margin:0 auto;padding:72px 60px 100px}
+.ps{display:grid;grid-template-columns:200px 1fr;gap:60px;padding:56px 0;border-bottom:1px solid var(--border);align-items:start}
+.ps:last-of-type{border-bottom:none;padding-bottom:0}
+.ps-l{position:sticky;top:80px}
+.ps-num{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.ps-title{font-size:15px;font-weight:800;color:var(--black);letter-spacing:-.01em;line-height:1.3}
+p.bt{font-size:14px;color:var(--gray);line-height:1.82;margin-bottom:14px;font-weight:300}
+p.bt strong{color:var(--black);font-weight:700}
+ul.pl{list-style:none;margin-top:4px}
+ul.pl li{font-size:14px;color:var(--gray);line-height:1.75;padding:13px 0 13px 20px;position:relative;border-bottom:1px solid var(--border);font-weight:300}
+ul.pl li:last-child{border-bottom:none}
+ul.pl li::before{content:'—';position:absolute;left:0;color:var(--black);font-weight:700;font-size:11px;top:16px}
+ul.pl li strong{color:var(--black);font-weight:700}
 
-    ul.policy-list { list-style: none; background: var(--gray); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
-    ul.policy-list li { font-size: 14px; color: var(--muted); line-height: 1.7; padding: 14px 18px 14px 44px; position: relative; border-bottom: 1px solid var(--border); }
-    ul.policy-list li:last-child { border-bottom: none; }
-    ul.policy-list li::before { content: ''; position: absolute; left: 18px; top: 21px; width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
-    ul.policy-list li strong { color: var(--text); font-weight: 600; }
+.cblock{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);margin-top:8px}
+.cb-l{background:var(--black);padding:52px 48px;color:var(--white)}
+.cb-l h3{font-size:26px;font-weight:900;letter-spacing:-.025em;margin-bottom:10px}
+.cb-l p{font-size:14px;color:rgba(255,255,255,.42);line-height:1.7;font-weight:300;margin-bottom:36px}
+.cb-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--red);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:opacity .15s}
+.cb-btn:hover{opacity:.88}
+.cb-r{background:var(--off);padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.cd{padding:18px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:120px 1fr;align-items:baseline}
+.cd:last-child{border-bottom:none;padding-bottom:0}
+.cdl{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.cdv{font-size:14px;font-weight:700;color:var(--black)}
 
-    .contact-block { background: var(--dark); border-radius: 24px; padding: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-    .contact-block h3 { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; }
-    .contact-block p { font-size: 14px; color: rgba(255,255,255,0.45); }
-    .contact-link { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 12px; background: linear-gradient(135deg, var(--red), var(--pink)); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap; box-shadow: 0 4px 20px rgba(255,45,85,0.35); }
-    .contact-link:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,45,85,0.45); }
+footer{background:var(--black);padding:48px 60px 32px;border-top:3px solid var(--red)}
+.fi{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:28px}
+.fw{font-size:16px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}
+.fls{display:flex;gap:32px}
+.fls a{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .15s}
+.fls a:hover{color:var(--white)}
+.fb{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fc{font-size:11px;color:rgba(255,255,255,.22);letter-spacing:.04em}
 
-    footer { background: var(--gray); border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-    .footer-wordmark { font-size: 15px; font-weight: 900; letter-spacing: 1.5px; color: var(--text); }
-    .footer-wordmark .a { color: var(--red); }
-    .footer-copy { font-size: 12px; color: var(--muted); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--red); }
-
-    @media (max-width: 600px) {
-      nav { padding: 0 20px; }
-      .page-hero { padding: 44px 20px 36px; }
-      .content { padding: 36px 20px 80px; }
-      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-      .contact-block { flex-direction: column; text-align: center; }
-    }
-  </style>
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .ph{grid-template-columns:1fr}
+  .ph-l{padding:52px 20px;border-right:none;border-bottom:1px solid var(--border)}
+  .ph-r{display:none}
+  .warn{padding:12px 20px}
+  .content{padding:44px 20px 72px}
+  .ps{grid-template-columns:1fr;gap:20px}
+  .ps-l{position:static}
+  .cblock{grid-template-columns:1fr}
+  footer{padding:36px 20px 24px}
+}
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="/smash-app/" class="nav-brand">
-      <div class="nav-logo-mark">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M10 2C10 2 7 0.5 5 2.5C3 4.5 4.5 7 7 8.5C8 9 10 9.5 10 9.5C10 9.5 12 9 13 8.5C15.5 7 17 4.5 15 2.5C13 0.5 10 2 10 2Z" fill="white" opacity="0.95"/>
-          <path d="M10 9.5C10 9.5 7 8 5 10C3 12 4.5 14.5 7 16C8 16.5 10 17 10 17C10 17 12 16.5 13 16C15.5 14.5 17 12 15 10C13 8 10 9.5 10 9.5Z" fill="white" opacity="0.7"/>
-        </svg>
-      </div>
-      <span class="nav-wordmark">SM<span class="a">A</span>SH</span>
-    </a>
-    <div class="nav-links">
+<nav>
+  <a href="/smash-app/" class="n-brand">
+    <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#0a0a0a"/><text x="16" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="22" font-weight="900" fill="#ffffff">S</text></svg>
+    <span class="n-wm">Smash</span>
+  </a>
+  <div class="n-links">
+    <a href="/smash-app/support" class="n-link">Support</a>
+    <a href="/smash-app/privacy" class="n-link">Privacy</a>
+    <a href="/smash-app/tos" class="n-link active">Terms</a>
+  </div>
+</nav>
+
+<div class="ph">
+  <div class="ph-l">
+    <div class="ph-label">Legal</div>
+    <h1 class="ph-title">Terms of<br/>Service</h1>
+    <p class="ph-sub">By using Smash, you agree to these terms. Please read them carefully before creating your account.</p>
+    <div class="ph-eff">Effective April 2026</div>
+  </div>
+  <div class="ph-r"></div>
+</div>
+
+<div class="warn">
+  <div class="warn-dot"></div>
+  <span class="warn-t">Smash is intended exclusively for users aged 18 and older. By creating an account you confirm you meet this requirement.</span>
+</div>
+
+<div class="content">
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">01</div><div class="ps-title">Acceptance of Terms</div></div>
+    <div>
+      <p class="bt">By downloading, installing, or using the Smash mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App.</p>
+      <p class="bt">We may update these Terms from time to time. Continued use after changes constitutes acceptance. We will update the effective date above when changes are made.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">02</div><div class="ps-title">Eligibility</div></div>
+    <div>
+      <p class="bt">You must be at least <strong>18 years old</strong> to use Smash. By creating an account, you confirm that:</p>
+      <ul class="pl">
+        <li>You are at least 18 years of age</li>
+        <li>You have the legal capacity to enter into a binding agreement</li>
+        <li>You are not prohibited from using the App under any applicable law</li>
+        <li>You have not been previously banned from Smash for violating these Terms</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">03</div><div class="ps-title">Your Account</div></div>
+    <div>
+      <p class="bt">You are responsible for all activity that occurs under your account:</p>
+      <ul class="pl">
+        <li>You must provide accurate and truthful information on your profile</li>
+        <li>You may not impersonate any person or entity</li>
+        <li>You may not create more than one account per person</li>
+        <li>You must notify us immediately of any unauthorized account use</li>
+        <li>You are responsible for all content you post</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">04</div><div class="ps-title">Prohibited Conduct</div></div>
+    <div>
+      <p class="bt">You agree not to use Smash to:</p>
+      <ul class="pl">
+        <li><strong>Harass, abuse, or harm</strong> any other user in any way</li>
+        <li><strong>Post false or misleading information</strong> including fake photos or identities</li>
+        <li><strong>Solicit money</strong> from other users or engage in commercial activity</li>
+        <li><strong>Send spam</strong> or unsolicited promotional messages</li>
+        <li><strong>Post sexually explicit content</strong> including nudity or graphic material</li>
+        <li><strong>Threaten, intimidate, or stalk</strong> other users</li>
+        <li><strong>Discriminate</strong> based on race, ethnicity, religion, gender, sexual orientation, disability, or any protected characteristic</li>
+        <li><strong>Violate any applicable law</strong> including privacy or intellectual property rights</li>
+        <li><strong>Attempt to hack</strong> or disrupt the App or its underlying systems</li>
+        <li><strong>Share another user's personal information</strong> without their consent</li>
+      </ul>
+      <p class="bt" style="margin-top:14px">Violations may result in immediate account termination and, where applicable, reporting to law enforcement.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">05</div><div class="ps-title">User Content</div></div>
+    <div>
+      <p class="bt">You retain ownership of content you post — photos, bios, and prompt responses. By posting, you grant us a non-exclusive, worldwide, royalty-free license to display and distribute that content within the App for the purpose of operating the service.</p>
+      <p class="bt">You represent that you have the right to post all content you submit and that it does not violate any third-party rights or these Terms.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">06</div><div class="ps-title">Safety &amp; Reporting</div></div>
+    <div>
+      <p class="bt">You can report or block any user at any time directly from their profile. Our team reviews all reports within 24 hours and takes appropriate action.</p>
+      <p class="bt">If you encounter content or behavior that constitutes a crime or imminent threat, contact local law enforcement in addition to reporting within the App. We cooperate with law enforcement as required by law.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">07</div><div class="ps-title">Account Termination</div></div>
+    <div>
+      <p class="bt">You may delete your account at any time from <strong>Profile → Settings → Delete Account</strong>. Your profile and data will be permanently removed within 30 days.</p>
+      <p class="bt">We reserve the right to suspend or terminate your account at any time, with or without notice, for violation of these Terms or at our sole discretion.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">08</div><div class="ps-title">Disclaimers</div></div>
+    <div>
+      <p class="bt">Smash is provided "as is" without warranties of any kind. We do not guarantee that:</p>
+      <ul class="pl">
+        <li>The App will be uninterrupted, error-free, or secure at all times</li>
+        <li>Any matches or connections will be successful or safe</li>
+        <li>User profiles are accurate or truthful</li>
+      </ul>
+      <p class="bt" style="margin-top:14px">You use Smash at your own risk. Exercise caution when meeting people you connect with online.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">09</div><div class="ps-title">Limitation of Liability</div></div>
+    <div>
+      <p class="bt">To the maximum extent permitted by law, Smash and its owners shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App or interactions with other users.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">10</div><div class="ps-title">Governing Law</div></div>
+    <div>
+      <p class="bt">These Terms are governed by the laws of the United States. Any disputes arising from these Terms or your use of Smash shall be resolved in the applicable courts of the United States.</p>
+    </div>
+  </div>
+
+  <div class="ps">
+    <div class="ps-l"><div class="ps-num">11</div><div class="ps-title">Policy Updates</div></div>
+    <div>
+      <p class="bt">We may update these Terms from time to time. We update the effective date above when we do. Continued use of Smash after changes constitutes acceptance of the updated Terms.</p>
+    </div>
+  </div>
+
+  <div class="cblock">
+    <div class="cb-l">
+      <h3>Questions about<br/>these Terms?</h3>
+      <p>We're happy to clarify anything. Reach out any time.</p>
+      <a href="mailto:libdon4life@yahoo.com" class="cb-btn">Email Us →</a>
+    </div>
+    <div class="cb-r">
+      <div class="cd"><div class="cdl">Contact</div><div class="cdv">libdon4life@yahoo.com</div></div>
+      <div class="cd"><div class="cdl">Response</div><div class="cdv">Within 2 business days</div></div>
+      <div class="cd"><div class="cdl">Effective</div><div class="cdv">April 2026</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fi">
+    <span class="fw">Smash</span>
+    <div class="fls">
       <a href="/smash-app/support">Support</a>
       <a href="/smash-app/privacy">Privacy</a>
-      <a href="/smash-app/tos" class="nl active">Terms</a>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div>
-        <div class="page-eyebrow">Legal</div>
-        <h1 class="page-title">Terms of Service</h1>
-        <p class="page-sub">By using Smash you agree to these terms. Please read them carefully — they explain your rights and responsibilities as a member of our community.</p>
-      </div>
-      <div class="effective-badge">📅 &nbsp;Effective April 2026</div>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">01</div>
-        <h2 class="section-title">Acceptance of Terms</h2>
-      </div>
-      <p class="body-text">By downloading, accessing, or using the Smash app ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Service.</p>
-      <p class="body-text">These Terms constitute a binding agreement between you and Smash ("we," "us," or "our"). We may update these Terms from time to time. Continued use of the Service after changes are posted constitutes your acceptance of the updated Terms.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">02</div>
-        <h2 class="section-title">Eligibility</h2>
-      </div>
-      <p class="body-text">You must be at least <strong>18 years old</strong> to use Smash. By creating an account, you confirm that you are 18 or older and that you have the legal capacity to enter into these Terms.</p>
-      <p class="body-text">We do not knowingly allow minors to register. If we discover that a user is under 18, we will immediately terminate their account and delete their data.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">03</div>
-        <h2 class="section-title">Account &amp; Registration</h2>
-      </div>
-      <p class="body-text">To use Smash you must register with a valid email address. You are responsible for all activity that occurs under your account.</p>
-      <ul class="policy-list">
-        <li>Provide accurate, current, and complete information when registering.</li>
-        <li>Keep your account credentials secure. Do not share your login access with anyone.</li>
-        <li>Notify us immediately at <a href="mailto:libdon4life@yahoo.com">libdon4life@yahoo.com</a> if you suspect unauthorized access to your account.</li>
-        <li>You may only create one account. Duplicate accounts may be removed without notice.</li>
-      </ul>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">04</div>
-        <h2 class="section-title">User Content</h2>
-      </div>
-      <p class="body-text">You retain ownership of the content you submit to Smash (photos, prompts, messages). By uploading content, you grant us a limited, non-exclusive, royalty-free license to store, display, and deliver that content solely for the purpose of operating the Service.</p>
-      <p class="body-text">You are solely responsible for your content. By posting content, you confirm that:</p>
-      <ul class="policy-list">
-        <li>You own the content or have the rights to share it.</li>
-        <li>The content does not violate any third-party rights, including intellectual property or privacy rights.</li>
-        <li>The content complies with these Terms and our community standards.</li>
-      </ul>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">05</div>
-        <h2 class="section-title">Prohibited Conduct</h2>
-      </div>
-      <p class="body-text">You agree not to use Smash to:</p>
-      <ul class="policy-list">
-        <li><strong>Harass or harm others</strong> — including sending threatening, abusive, or sexually explicit messages.</li>
-        <li><strong>Impersonate others</strong> — creating a false identity or misrepresenting your affiliation with any person or entity.</li>
-        <li><strong>Post fake or misleading content</strong> — including photos that are not of you or information that is false.</li>
-        <li><strong>Spam or solicit</strong> — sending unsolicited commercial messages or promotions.</li>
-        <li><strong>Scrape or reverse-engineer</strong> — accessing data through automated means or attempting to extract the app's source code.</li>
-        <li><strong>Violate any law</strong> — including local, national, or international regulations.</li>
-        <li><strong>Facilitate exploitation</strong> — any content or conduct related to human trafficking, sexual exploitation, or abuse of minors is strictly prohibited and will be reported to law enforcement.</li>
-      </ul>
-      <p class="body-text" style="margin-top: 16px;">Violations may result in immediate account suspension or permanent removal without prior notice.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">06</div>
-        <h2 class="section-title">Safety &amp; Reporting</h2>
-      </div>
-      <p class="body-text">Smash provides in-app tools to report and block other users. We review all reports within 24 hours and take appropriate action, including account removal for confirmed violations.</p>
-      <p class="body-text">To report a user, tap the <strong>three-dot menu (⋯)</strong> on their profile and select <strong>Report</strong>. You may also contact us directly at <a href="mailto:libdon4life@yahoo.com">libdon4life@yahoo.com</a>.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">07</div>
-        <h2 class="section-title">Termination</h2>
-      </div>
-      <p class="body-text">You may delete your account at any time from <strong>Profile → Settings → Delete Account</strong>. Deletion is permanent and irreversible.</p>
-      <p class="body-text">We reserve the right to suspend or terminate your account at any time, with or without notice, for any violation of these Terms or for any conduct we determine to be harmful to the Service or its users.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">08</div>
-        <h2 class="section-title">Disclaimers</h2>
-      </div>
-      <p class="body-text">Smash is provided <strong>"as is"</strong> without warranties of any kind, express or implied. We do not guarantee that the Service will be uninterrupted, error-free, or free of harmful components.</p>
-      <p class="body-text">We are not responsible for the conduct of any user, on or off the app. Use your own judgment and stay safe when meeting people you've connected with online.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">09</div>
-        <h2 class="section-title">Limitation of Liability</h2>
-      </div>
-      <p class="body-text">To the maximum extent permitted by law, Smash and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service, including but not limited to loss of data, loss of goodwill, or personal injury.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">10</div>
-        <h2 class="section-title">Privacy</h2>
-      </div>
-      <p class="body-text">Your use of Smash is also governed by our <a href="/smash-app/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the Service, you consent to the data practices described in that policy.</p>
-    </div>
-
-    <div class="policy-section">
-      <div class="section-header">
-        <div class="section-num-badge">11</div>
-        <h2 class="section-title">Changes to These Terms</h2>
-      </div>
-      <p class="body-text">We may revise these Terms at any time. When we do, we will update the effective date at the top of this page. Your continued use of Smash after changes are posted constitutes your acceptance of the new Terms.</p>
-    </div>
-
-    <div class="contact-block">
-      <div>
-        <h3>Questions about our terms?</h3>
-        <p>We're happy to help. Reach out any time.</p>
-      </div>
-      <a href="mailto:libdon4life@yahoo.com" class="contact-link">libdon4life@yahoo.com</a>
-    </div>
-
-  </div>
-
-  <footer>
-    <span class="footer-wordmark">SM<span class="a">A</span>SH</span>
-    <span class="footer-copy">© 2026 Smash. All rights reserved.</span>
-    <div class="footer-links">
-      <a href="/smash-app/support">Support</a>
-      <a href="/smash-app/privacy">Privacy Policy</a>
       <a href="/smash-app/tos">Terms</a>
     </div>
-  </footer>
+  </div>
+  <div class="fb">
+    <span class="fc">© 2026 Smash. All rights reserved.</span>
+    <span class="fc">Real People. Real Connections.</span>
+  </div>
+</footer>
 
 </body>
 </html>
