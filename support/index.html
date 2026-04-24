@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Smash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #ff2d55; --pink: #ff5e9e;
+      --dark: #0d0d12; --gray: #f5f5f7; --gray2: #e8e8ed;
+      --text: #1d1d1f; --muted: #6e6e73; --border: #d2d2d7;
+    }
+    body { background: #fff; color: var(--text); font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; padding: 0 48px; height: 64px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #ff6b35, #ff2d55, #c0175a); display: flex; align-items: center; justify-content: center; }
+    .nav-wordmark { font-size: 18px; font-weight: 900; letter-spacing: 1.5px; color: var(--text); }
+    .nav-wordmark .a { color: var(--red); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--red); font-weight: 600; }
+
+    .page-hero { background: var(--gray); border-bottom: 1px solid var(--border); padding: 64px 48px 52px; }
+    .page-hero-inner { max-width: 720px; margin: 0 auto; }
+    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+    .page-title { font-size: clamp(32px, 4vw, 48px); font-weight: 900; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.1; }
+    .page-sub { font-size: 16px; color: var(--muted); line-height: 1.7; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 52px 48px 100px; }
+
+    .safety-note { display: flex; gap: 14px; align-items: flex-start; background: #fff0f3; border: 1px solid #ffd0db; border-radius: 14px; padding: 18px 20px; margin-bottom: 44px; }
+    .safety-note-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .safety-note-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .safety-note-text p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .faq-group { margin-bottom: 44px; }
+    .faq-group-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--red); display: inline-block; }
+    .faq-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 8px; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; }
+    .faq-card:hover { border-color: #c7c7cc; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .faq-q { padding: 18px 22px; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+    .faq-q-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--gray); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; color: var(--muted); transition: background 0.2s, color 0.2s, transform 0.25s; }
+    .faq-card.open .faq-q-icon { background: var(--red); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-card.open .faq-a { max-height: 400px; }
+    .faq-a-inner { padding: 0 22px 18px; font-size: 14px; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 16px; }
+    .faq-a-inner strong { color: var(--text); font-weight: 600; }
+
+    .contact-card { background: var(--dark); border-radius: 24px; padding: 48px; text-align: center; margin-top: 16px; }
+    .contact-card h3 { font-size: 24px; font-weight: 900; color: #fff; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .contact-card p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; background: linear-gradient(135deg, var(--red), var(--pink)); color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(255,45,85,0.4); }
+    .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,45,85,0.5); }
+    .response-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    footer { background: var(--gray); border-top: 1px solid var(--border); padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .footer-wordmark { font-size: 15px; font-weight: 900; letter-spacing: 1.5px; color: var(--text); }
+    .footer-wordmark .a { color: var(--red); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--red); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .page-hero { padding: 44px 20px 36px; }
+      .content { padding: 36px 20px 80px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/smash-app/" class="nav-brand">
+      <div class="nav-logo-mark">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2C10 2 7 0.5 5 2.5C3 4.5 4.5 7 7 8.5C8 9 10 9.5 10 9.5C10 9.5 12 9 13 8.5C15.5 7 17 4.5 15 2.5C13 0.5 10 2 10 2Z" fill="white" opacity="0.95"/>
+          <path d="M10 9.5C10 9.5 7 8 5 10C3 12 4.5 14.5 7 16C8 16.5 10 17 10 17C10 17 12 16.5 13 16C15.5 14.5 17 12 15 10C13 8 10 9.5 10 9.5Z" fill="white" opacity="0.7"/>
+        </svg>
+      </div>
+      <span class="nav-wordmark">SM<span class="a">A</span>SH</span>
+    </a>
+    <div class="nav-links">
+      <a href="/smash-app/support" class="active">Support</a>
+      <a href="/smash-app/privacy">Privacy</a>
+      <a href="/smash-app/tos" class="nl">Terms</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Help Center</div>
+      <h1 class="page-title">We're here to help.</h1>
+      <p class="page-sub">Find answers to common questions below, or reach out directly — we respond within 2 business days.</p>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="safety-note">
+      <div class="safety-note-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L13 3V8C13 11 10.5 14 8 14C5.5 14 3 11 3 8V3L8 1Z" stroke="white" stroke-width="1.5" fill="none"/></svg>
+      </div>
+      <div class="safety-note-text">
+        <strong>Community Safety</strong>
+        <p>Smash does not tolerate harassment, abusive behavior, or inappropriate content. Report or block any user directly from their profile. All reports reviewed within 24 hours.</p>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Login &amp; Access</div>
+      <div class="faq-card">
+        <div class="faq-q">How do I sign in to Smash? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Smash uses passwordless login. Enter your email address and we'll send a one-time verification code. Enter that code in the app and you're signed in — no password ever required.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">I didn't receive my verification code. <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Check your spam or junk folder first. Wait 60 seconds then tap "Resend Code." Make sure you entered the correct email address. Still having trouble? Contact us below.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How do I sign out? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Go to <strong>Profile → Settings → Sign Out</strong>. You can sign back in at any time using your email and a new one-time code.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Profile &amp; Prompts</div>
+      <div class="faq-card">
+        <div class="faq-q">How do I set up my profile? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">After signing in for the first time you'll be guided through onboarding. Add your name, age, bio, answer personality prompts, and upload photos. Your profile goes live once setup is complete.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What are personality prompts? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Prompts are short questions you answer to help others get to know the real you — your interests, values, and what you're looking for. They help you stand out and spark better conversations.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">My photo upload isn't working. <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Go to <strong>iOS Settings → Smash → Photos</strong> and set access to "All Photos" or "Selected Photos." If it continues, restart the app and try again.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Safety &amp; Reporting</div>
+      <div class="faq-card">
+        <div class="faq-q">How do I report a user? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Tap the user's profile → tap the <strong>three-dot menu (⋯)</strong> → select <strong>Report</strong>. Our team reviews all reports within 24 hours and takes appropriate action.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How do I block a user? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Tap the user's profile → tap the <strong>three-dot menu (⋯)</strong> → select <strong>Block</strong>. Blocked users will no longer appear in your feed and cannot contact you.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What violates community standards? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Harassment, hate speech, sexual exploitation, impersonation, spam, and abusive language are all violations. Report anything that makes you feel unsafe — we take every report seriously.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-label">Account &amp; Deletion</div>
+      <div class="faq-card">
+        <div class="faq-q">How do I delete my account? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Go to <strong>Profile → Settings → Delete Account</strong>. Confirm when prompted. Your profile, photos, prompts, messages, and credentials will be permanently removed within 30 days. This cannot be undone.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What data is deleted with my account? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Everything — your profile, photos, personality prompts, messages, and login credentials are permanently deleted. We do not retain your personal data after account deletion.</div></div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Who can see my profile? <div class="faq-q-icon">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Only other Smash users can see your profile. We never share your personal information with advertisers or third parties.</div></div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Still need help?</h3>
+      <p>Send us an email and we'll get back to you within 2 business days.</p>
+      <a href="mailto:libdon4life@yahoo.com" class="contact-btn">Email Support</a>
+      <div class="response-note">libdon4life@yahoo.com · Response within 2 business days</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-wordmark">SM<span class="a">A</span>SH</span>
+    <span class="footer-copy">© 2026 Smash. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/smash-app/support">Support</a>
+      <a href="/smash-app/privacy">Privacy Policy</a>
+      <a href="/smash-app/tos">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const card = q.closest('.faq-card');
+        const wasOpen = card.classList.contains('open');
+        document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+        if (!wasOpen) card.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
